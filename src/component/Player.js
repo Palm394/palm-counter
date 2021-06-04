@@ -1,5 +1,5 @@
 import { Card, makeStyles, Typography } from '@material-ui/core'
-import { useState } from 'react'
+//import { useState } from 'react'
 
 const useStyle = makeStyles({
     root: {
@@ -11,7 +11,7 @@ const useStyle = makeStyles({
 })
 
 const Player = ({name}) => {
-    const [score, setScore] = useState(0)
+    //const [score, setScore] = useState(0)
 
     const classes = useStyle()
 
@@ -19,7 +19,7 @@ const Player = ({name}) => {
         <Card variant="outlined" className={classes.root}>
             <Typography align='center' variant='h5'>{name}</Typography>
             <hr />
-            <Typography align='center' variant='h2'>{score}</Typography>
+            <Typography align='center' variant='h2'>0</Typography>
         </Card>
     )
 }
