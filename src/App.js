@@ -1,24 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import { AppBar, Container, Typography } from '@material-ui/core'
+import React from 'react'
+import Player from './component/Player.js'
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+        <AppBar position='relative' color='primary'>
+          <Typography variant='h3' align='center'>Palm - Counter</Typography>
+        </AppBar>
+
+        <Container style={{display:'flex',flexWrap:'wrap'}}>
+          <Player name="Arsonist" />
+          <Player name="Catalyst" />
+          <Player name="Inhibitor" />
+          <Player name="Detective" />
+          <Player name="(Another) ByStander" />
+          <Player name="Palm" />
+        </Container>
+          
+    </>
   );
 }
 
