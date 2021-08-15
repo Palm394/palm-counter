@@ -1,18 +1,14 @@
 import { Card, makeStyles, Typography } from '@material-ui/core'
-//import { useState } from 'react'
 
 const useStyle = makeStyles({
     root: {
         width: 250,
         height: 130,
-
         margin: '1.5em'
     },
 })
 
-const Player = ({name,pts}) => {
-    //const [score, setScore] = useState(0)
-
+const Player = ({ name , pts }) => {
     const classes = useStyle()
 
     return (
