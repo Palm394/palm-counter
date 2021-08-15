@@ -10,7 +10,7 @@ const useStyle = makeStyles({
     },
 })
 
-const Player = ({name}) => {
+const Player = ({name,pts}) => {
     //const [score, setScore] = useState(0)
 
     const classes = useStyle()
@@ -19,7 +19,7 @@ const Player = ({name}) => {
         <Card variant="outlined" className={classes.root}>
             <Typography align='center' variant='h5'>{name}</Typography>
             <hr />
-            <Typography align='center' variant='h2'>0</Typography>
+            <Typography align='center' variant='h2'>{pts}</Typography>
         </Card>
     )
 }
