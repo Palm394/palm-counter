@@ -4,7 +4,7 @@ import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import React, {useState,useEffect} from 'react'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
 
-import { Player, Header } from './component/index.js'
+import { Player, Header, Developer } from './component/index.js'
 
 import axios from 'axios'
 
@@ -39,6 +39,7 @@ function App() {
                   </Container>
                 </Route>
             </Switch>
+            <Developer />
         </Router>
     </ThemeProvider>
   );
