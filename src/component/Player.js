@@ -6,6 +6,7 @@ const useStyle = makeStyles({
         height: 140,
         margin: '2em',
         borderRadius: '25px',
+        border: 'transparent',
         backgroundColor: '#DDDBDB',
         boxShadow: '#4E4E4E 7px 7px',
         paddingBottom: '10px',

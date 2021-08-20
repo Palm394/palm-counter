@@ -1,27 +1,20 @@
 import { Container } from '@material-ui/core'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 import React, {useState,useEffect} from 'react'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
 
-import { Player, Header } from './component/index.js'
+import { Player, Header, Developer , LastScore } from './component/index.js'
+import { theme } from './config/theme.js'
 
 import axios from 'axios'
-
-const theme = createMuiTheme({
-  typography: {
-    fontFamily: [
-      'Londrina Solid',
-      'cursive',
-    ].join(','),
-  },});
 
 function App() {
 
   const [score, setScore] = useState([]) 
 
   async function callAPI(){
-    const result = await axios(`${process.env.REACT_APP_API}`)
+    const result = await axios(`${process.env.REACT_APP_API}/score?season=${process.env.REACT_APP_LAST_SS}`)
     setScore(result.data)
   }
   useEffect(() => {
@@ -32,6 +25,9 @@ function App() {
     <ThemeProvider theme={theme}>
         <Router>
             <Header />
+            <Container style={{width: '84%'}}>
+              <LastScore />
+            </Container>
             <Switch>
                 <Route exact path='/'>
                   <Container style={{display:'flex',flexWrap:'wrap'}}>
@@ -39,6 +35,7 @@ function App() {
                   </Container>
                 </Route>
             </Switch>
+            <Developer />
         </Router>
     </ThemeProvider>
   );
