@@ -1,20 +1,13 @@
 import { Container } from '@material-ui/core'
-import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import { ThemeProvider } from '@material-ui/core/styles';
 
 import React, {useState,useEffect} from 'react'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
 
 import { Player, Header, Developer } from './component/index.js'
+import { theme } from './config/theme.js'
 
 import axios from 'axios'
-
-const theme = createMuiTheme({
-  typography: {
-    fontFamily: [
-      'Londrina Solid',
-      'cursive',
-    ].join(','),
-  },});
 
 function App() {
 
