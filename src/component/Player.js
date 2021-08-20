@@ -13,7 +13,7 @@ const Player = ({ name , pts }) => {
 
     return (
         <Card variant="outlined" className={classes.root}>
-            <Typography align='center' variant='h5'>{name}</Typography>
+            <Typography align='center' variant='h4'>{name}</Typography>
             <hr />
             <Typography align='center' variant='h2'>{pts}</Typography>
         </Card>
