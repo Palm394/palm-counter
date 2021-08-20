@@ -4,7 +4,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import React, {useState,useEffect} from 'react'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
 
-import { Player, Header, Developer } from './component/index.js'
+import { Player, Header, Developer , LastScore } from './component/index.js'
 import { theme } from './config/theme.js'
 
 import axios from 'axios'
@@ -25,6 +25,9 @@ function App() {
     <ThemeProvider theme={theme}>
         <Router>
             <Header />
+            <Container style={{width: '84%'}}>
+              <LastScore />
+            </Container>
             <Switch>
                 <Route exact path='/'>
                   <Container style={{display:'flex',flexWrap:'wrap'}}>
