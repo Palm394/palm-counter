@@ -1,8 +1,17 @@
 import { AppBar, Container, Typography } from '@material-ui/core'
+import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import React, {useState,useEffect} from 'react'
 import Player from './component/Player.js'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
 import axios from 'axios'
+
+const theme = createMuiTheme({
+  typography: {
+    fontFamily: [
+      'Londrina Solid',
+      'cursive',
+    ].join(','),
+  },});
 
 function App() {
 
@@ -17,7 +26,7 @@ function App() {
   },[])
 
   return (
-    <>
+    <ThemeProvider theme={theme}>
         <Router>
             <AppBar position='relative' color='primary'>
               <Typography variant='h3' align='center'>Palm - Counter</Typography>
@@ -32,7 +41,7 @@ function App() {
         </Router>
           
           
-    </>
+    </ThemeProvider>
   );
 }
 
