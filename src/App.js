@@ -14,7 +14,7 @@ function App() {
   const [score, setScore] = useState([]) 
 
   async function callAPI(){
-    const result = await axios(`${process.env.REACT_APP_API}`)
+    const result = await axios(`${process.env.REACT_APP_API}/score?season=${process.env.REACT_APP_LAST_SS}`)
     setScore(result.data)
   }
   useEffect(() => {
