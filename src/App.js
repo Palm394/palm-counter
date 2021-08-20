@@ -28,8 +28,9 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
         <Router>
-            <AppBar position='relative' color='primary'>
-              <Typography variant='h3' align='center'>Palm - Counter</Typography>
+            <AppBar style={{paddingTop: '10px',paddingBottom: '20px'}} position='relative' color='primary'>
+              <Typography variant='h2' align='center'>Palm - Counter</Typography>
+              <Typography variant='h5' align='center'>“Wait.. When did Palm comes?”</Typography>
             </AppBar>
             <Switch>
                 <Route exact path='/'>
