@@ -2,10 +2,21 @@ import { Card, makeStyles, Typography } from '@material-ui/core'
 
 const useStyle = makeStyles({
     root: {
-        width: 250,
-        height: 130,
-        margin: '1.5em'
+        width: 210,
+        height: 140,
+        margin: '2em',
+        borderRadius: '25px',
+        backgroundColor: '#DDDBDB',
+        boxShadow: '#4E4E4E 7px 7px',
+        paddingBottom: '10px',
     },
+    header: {
+        color: 'white',
+        backgroundColor: '#777777',
+        paddingTop: '0.2em',
+        paddingBottom: '0.2em',
+        marginBottom: '0.4em',
+    }
 })
 
 const Player = ({ name , pts }) => {
@@ -13,8 +24,7 @@ const Player = ({ name , pts }) => {
 
     return (
         <Card variant="outlined" className={classes.root}>
-            <Typography align='center' variant='h4'>{name}</Typography>
-            <hr />
+            <Typography className={classes.header} align='center' variant='h4'>{name}</Typography>
             <Typography align='center' variant='h2'>{pts}</Typography>
         </Card>
     )
