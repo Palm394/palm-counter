@@ -1,8 +1,11 @@
-import { AppBar, Container, Typography } from '@material-ui/core'
+import { Container } from '@material-ui/core'
 import { ThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
 import React, {useState,useEffect} from 'react'
-import Player from './component/Player.js'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
+
+import { Player, Header } from './component/index.js'
+
 import axios from 'axios'
 
 const theme = createMuiTheme({
@@ -28,10 +31,7 @@ function App() {
   return (
     <ThemeProvider theme={theme}>
         <Router>
-            <AppBar style={{paddingTop: '10px',paddingBottom: '20px'}} position='relative' color='primary'>
-              <Typography variant='h2' align='center'>Palm - Counter</Typography>
-              <Typography variant='h5' align='center'>“Wait.. When did Palm comes?”</Typography>
-            </AppBar>
+            <Header />
             <Switch>
                 <Route exact path='/'>
                   <Container style={{display:'flex',flexWrap:'wrap'}}>
@@ -40,8 +40,6 @@ function App() {
                 </Route>
             </Switch>
         </Router>
-          
-          
     </ThemeProvider>
   );
 }
