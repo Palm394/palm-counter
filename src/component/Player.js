@@ -4,7 +4,7 @@ const useStyle = makeStyles({
     root: {
         width: 210,
         height: 140,
-        margin: '2em',
+        margin: '1.5em 2.5em',
         borderRadius: '25px',
         border: 'transparent',
         backgroundColor: '#DDDBDB',

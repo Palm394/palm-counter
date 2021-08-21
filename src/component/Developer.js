@@ -6,7 +6,6 @@ const useStyle = makeStyles((theme) => ({
         position: 'fixed',
         bottom:'0',
         paddingBottom: '15px',
-        width: '100%',
         backgroundColor: 'white',
         color: theme.palette.text.main,
     },

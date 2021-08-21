@@ -5,6 +5,7 @@ import axios from 'axios'
 const useStyle= makeStyles((theme) => ({
     text: {
         color: theme.palette.text.main,
+        marginLeft:'8vw',
         marginTop: '16px',
         marginBottom: '8px',
     },
