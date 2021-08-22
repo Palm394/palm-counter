@@ -6,7 +6,7 @@ import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#C4C4C4',
-        height: '82vh',
+        minHeight: '83vh',
         width:'26vw',
     },
     tab: {

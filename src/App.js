@@ -28,7 +28,7 @@ function App() {
             <Switch>
                 <Route path='/'>
                   <Box style={{display:'flex'}}>
-                    <Container style={{width:'74vw',height:'80vh'}}>
+                    <Container style={{width:'74vw'}}>
                       <LastScore />
                       <Container style={{display:'flex',flexWrap:'wrap',justifyContent:'center'}}>
                         {Object.entries(score).map(([key,value]) => <Player key={key} name={key} pts={value}/>)}
