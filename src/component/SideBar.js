@@ -11,9 +11,7 @@ const useStyles = makeStyles(() => ({
     },
     tab: {
         backgroundColor: '#677DF5',
-        margin:'0 auto',
         color: 'white',
-        width:'100%',
         fontSize:'30px'
     }
 }))
@@ -26,7 +24,7 @@ const SideBar = () => {
     }
 
     return (
-    <Tabs className={classes.root} orientation="vertical">
+    <Tabs variant="fullWidth" className={classes.root} orientation="vertical">
         {t}
     </Tabs>
     )
