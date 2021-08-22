@@ -1,10 +1,10 @@
-import { Container } from '@material-ui/core'
+import { Container,Box } from '@material-ui/core'
 import { ThemeProvider } from '@material-ui/core/styles';
 
 import React, {useState,useEffect} from 'react'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
 
-import { Player, Header, Developer , LastScore } from './component/index.js'
+import { Player, Header, Developer , LastScore, SideBarFake } from './component/index.js'
 import { theme } from './config/theme.js'
 
 import axios from 'axios'
@@ -25,17 +25,20 @@ function App() {
     <ThemeProvider theme={theme}>
         <Router>
             <Header />
-            <Container style={{width: '84%'}}>
-              <LastScore />
-            </Container>
             <Switch>
-                <Route exact path='/'>
-                  <Container style={{display:'flex',flexWrap:'wrap'}}>
-                    {Object.entries(score).map(([key,value]) => <Player key={key} name={key} pts={value}/>)}
-                  </Container>
+                <Route path='/'>
+                  <Box style={{display:'flex'}}>
+                    <Container style={{width:'74vw',height:'80vh'}}>
+                      <LastScore />
+                      <Container style={{display:'flex',flexWrap:'wrap',justifyContent:'center'}}>
+                        {Object.entries(score).map(([key,value]) => <Player key={key} name={key} pts={value}/>)}
+                      <Developer />
+                      </Container>
+                    </Container>
+                    <SideBarFake />
+                  </Box>
                 </Route>
             </Switch>
-            <Developer />
         </Router>
     </ThemeProvider>
   );

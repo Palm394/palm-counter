@@ -5,6 +5,7 @@ import axios from 'axios'
 const useStyle= makeStyles((theme) => ({
     text: {
         color: theme.palette.text.main,
+        marginLeft:'8vw',
         marginTop: '16px',
         marginBottom: '8px',
     },
@@ -24,7 +25,7 @@ const LastScore = () => {
     },[])
 
     return (
-        <Typography className={classes.text} variant='h5'>last score by {data.name}, at {data.time} {data.date}</Typography>
+        <Typography className={classes.text} variant='h5'>last score by {data.name}, at {data.datetime}</Typography>
     )
 }
 
