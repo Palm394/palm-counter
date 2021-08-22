@@ -4,7 +4,7 @@ import { ThemeProvider } from '@material-ui/core/styles';
 import React, {useState,useEffect} from 'react'
 import { BrowserRouter as Router ,Switch , Route } from 'react-router-dom'
 
-import { Player, Header, Developer , LastScore, SideBarFake } from './component/index.js'
+import { Player, Header, Developer , LastScore, SideBar } from './component/index.js'
 import { theme } from './config/theme.js'
 
 import axios from 'axios'
@@ -35,7 +35,7 @@ function App() {
                       <Developer />
                       </Container>
                     </Container>
-                    <SideBarFake />
+                    <SideBar />
                   </Box>
                 </Route>
             </Switch>
