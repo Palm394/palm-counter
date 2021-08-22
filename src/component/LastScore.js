@@ -25,7 +25,7 @@ const LastScore = () => {
     },[])
 
     return (
-        <Typography className={classes.text} variant='h5'>last score by {data.name}, at {data.time} {data.date}</Typography>
+        <Typography className={classes.text} variant='h5'>last score by {data.name}, at {data.datetime}</Typography>
     )
 }
 

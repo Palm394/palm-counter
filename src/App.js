@@ -37,7 +37,6 @@ function App() {
                         {Object.entries(score).map(([key,value]) => <Player key={key} name={key} pts={value}/>)}
                       <Developer />
                       </Container>
-                      
                     </Container>
                     <SideBar />
                   </Box>
