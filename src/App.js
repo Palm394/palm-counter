@@ -19,7 +19,7 @@ function App() {
                     <Router>
                       <Switch>
                         <Route path='/season/:ss' component={Players} />
-                        <Route exact path='/' component={Players} />
+                        <Route path='/' component={Players} />
                       </Switch>
                     </Router>
                   <Developer />
@@ -28,7 +28,7 @@ function App() {
                 <Router>
                   <Switch>
                     <Route path='/season/:ss' component={SideBar} />
-                    <Route exact path='/' component={SideBar} />
+                    <Route path='/' component={SideBar} />
                   </Switch>
                 </Router>
             
