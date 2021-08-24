@@ -10,7 +10,6 @@ const Players = () => {
 
     useEffect(() => {
         async function callAPI(){
-            console.log('call score')
             const result = await axios(`${process.env.REACT_APP_API}/score?season=${ss === undefined ? process.env.REACT_APP_LAST_SS : ss}`)
             setScore(result.data)
           }

@@ -24,7 +24,10 @@ function App() {
                   <Developer />
                   </Container>
                 </Container>
-                <SideBar />
+                <Switch>
+                  <Route path='/season/:ss' component={SideBar} />
+                  <Route exact path='/' component={SideBar} />
+                </Switch>
               </Box> 
         </Router>
     </ThemeProvider>
