@@ -11,25 +11,28 @@ function App() {
 
   return (
     <ThemeProvider theme={theme}>
-        <Router>
             <Header />
               <Box style={{display:'flex'}}>
                 <Container style={{width:'74vw'}}>
                   <LastScore />
                   <Container style={{display:'flex',flexWrap:'wrap',justifyContent:'center'}}>
-                    <Switch>
-                      <Route path='/season/:ss' component={Players} />
-                      <Route exact path='/' component={Players} />
-                    </Switch>
+                    <Router>
+                      <Switch>
+                        <Route path='/season/:ss' component={Players} />
+                        <Route exact path='/' component={Players} />
+                      </Switch>
+                    </Router>
                   <Developer />
                   </Container>
                 </Container>
-                <Switch>
-                  <Route path='/season/:ss' component={SideBar} />
-                  <Route exact path='/' component={SideBar} />
-                </Switch>
+                <Router>
+                  <Switch>
+                    <Route path='/season/:ss' component={SideBar} />
+                    <Route exact path='/' component={SideBar} />
+                  </Switch>
+                </Router>
+            
               </Box> 
-        </Router>
     </ThemeProvider>
   );
 }
