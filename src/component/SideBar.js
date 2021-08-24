@@ -1,32 +1,58 @@
 import React from 'react'
-import Tabs from '@material-ui/core/Tabs';
-import Tab from '@material-ui/core/Tab';
+import { Link, Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+import { useParams } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#C4C4C4',
-        height: '82vh',
-        width:'26vw',
+        minHeight: '83vh',
     },
-    tab: {
+    tabNon: {
         backgroundColor: '#677DF5',
         color: 'white',
-        fontSize:'30px'
+        fontSize:'30px',
+        width:'90%',
+        height:'1.5em',
+        borderRadius:'0 10px 10px 0',
+    },
+    tabFocus: {
+        backgroundColor:'white',
+        color:'#677DF5',
+        fontSize:'30px',
+        width:'90%',
+        height:'3em',
+        borderRadius:'0 10px 10px 0',
     }
 }))
 
+const LAST_SS = parseInt(process.env.REACT_APP_LAST_SS)
+
 const SideBar = () => {
     const classes = useStyles()
+
+    const { ss } = useParams()
     let t = []
-    for(let i=1;i <= 2;i++){
-        t.push(<Tab key={i} className={classes.tab} label={`Season ${i}`} />)
+    for(let i=1;i <= LAST_SS;i++){
+        let style
+        if(parseInt(ss) === i){
+            style = classes.tabFocus
+        }else{
+            if(ss === undefined && i === LAST_SS){
+                style = classes.tabFocus
+            }else{
+                style = classes.tabNon
+            }
+        }
+        t.push(<Button component={Link} key={i} href={`/season/${i}`} className={style}>
+            {`Season ${i}`}
+        </Button>)
     }
 
     return (
-    <Tabs variant="fullWidth" className={classes.root} orientation="vertical">
+    <div className={classes.root}>
         {t}
-    </Tabs>
+    </div>
     )
 }
 
