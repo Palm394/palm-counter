@@ -52,9 +52,9 @@ const SideBar = () => {
 
     return (
         <Hidden smDown>
-            <div className={classes.root}>
+            <aside className={classes.root}>
                 {t}
-            </div>
+            </aside>
         </Hidden>
     )
 }
