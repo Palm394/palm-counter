@@ -14,15 +14,15 @@ function App() {
             <Header />
             <Router>
               <Box style={{display:'flex'}}>
-                <Container style={{width:'74vw'}}>
+                <Container style={{displat:'flex',flexDirection:'column',justifyContent:'space-around'}}>
                   <LastScore />
-                  <Container style={{display:'flex',flexWrap:'wrap',justifyContent:'center'}}>
+                  <Box style={{display:'flex',flexWrap:'wrap',justifyContent:'center',padding:'0 2vw'}}>
                       <Switch>
                         <Route path='/season/:ss' component={Players} />
                         <Route path='/' component={Players} />
                       </Switch>
+                  </Box>
                   <Developer />
-                  </Container>
                 </Container>
                   <Switch>
                     <Route path='/season/:ss' component={SideBar} />

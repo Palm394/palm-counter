@@ -3,9 +3,6 @@ import React from 'react'
 
 const useStyle = makeStyles((theme) => ({
     root: {
-        position: 'fixed',
-        bottom:'0',
-        paddingBottom: '15px',
         backgroundColor: 'white',
         color: theme.palette.text.main,
     },

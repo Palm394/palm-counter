@@ -1,5 +1,5 @@
 import React from 'react'
-import { Button} from '@material-ui/core';
+import { Button, Hidden} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import { useParams,Link as RouterLink } from 'react-router-dom';
 
@@ -7,6 +7,7 @@ const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#C4C4C4',
         minHeight: '83vh',
+        width:'18vw',
     },
     tabNon: {
         backgroundColor: '#677DF5',
@@ -50,9 +51,11 @@ const SideBar = () => {
     }
 
     return (
-    <div className={classes.root}>
-        {t}
-    </div>
+        <Hidden smDown>
+            <div className={classes.root}>
+                {t}
+            </div>
+        </Hidden>
     )
 }
 
