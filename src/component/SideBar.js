@@ -1,12 +1,13 @@
 import React from 'react'
-import { Link, Button} from '@material-ui/core';
+import { Button, Hidden} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useParams } from 'react-router-dom';
+import { useParams,Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     root: {
         backgroundColor: '#C4C4C4',
         minHeight: '83vh',
+        width:'18vw',
     },
     tabNon: {
         backgroundColor: '#677DF5',
@@ -44,15 +45,17 @@ const SideBar = () => {
                 style = classes.tabNon
             }
         }
-        t.push(<Button component={Link} key={i} href={`/season/${i}`} className={style}>
+        t.push(<Button component={RouterLink} key={i} to={`/season/${i}`} className={style}>
             {`Season ${i}`}
         </Button>)
     }
 
     return (
-    <div className={classes.root}>
-        {t}
-    </div>
+        <Hidden smDown>
+            <aside className={classes.root}>
+                {t}
+            </aside>
+        </Hidden>
     )
 }
 
