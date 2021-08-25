@@ -1,7 +1,7 @@
 import React from 'react'
-import { Link, Button} from '@material-ui/core';
+import { Button} from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
-import { useParams } from 'react-router-dom';
+import { useParams,Link as RouterLink } from 'react-router-dom';
 
 const useStyles = makeStyles(() => ({
     root: {
@@ -44,7 +44,7 @@ const SideBar = () => {
                 style = classes.tabNon
             }
         }
-        t.push(<Button component={Link} key={i} href={`/season/${i}`} className={style}>
+        t.push(<Button component={RouterLink} key={i} to={`/season/${i}`} className={style}>
             {`Season ${i}`}
         </Button>)
     }
